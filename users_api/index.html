@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>users api</title>
+</head>
+
+<body>
+    <div id="users">
+
+    </div>
+
+
+    <script>
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(data => {
+    const userContainer = document.getElementById('users');
+    for(let i = 0; i < data.length; i++) {
+        const user = data[i];
+        const p = document.createElement('p');
+        p.innerHTML = `<strong>${user.username}</strong>`;
+        userContainer.appendChild(p);
+    }
+})
+
+    </script>
+</body>
+
+</html>
