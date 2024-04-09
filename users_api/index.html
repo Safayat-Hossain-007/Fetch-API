@@ -5,28 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>users api</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <input id="user-count" type="text"><button id="load-user">Load User</button>
     <div id="users">
 
     </div>
 
+    <div id="user-detail">
 
-    <script>
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.json())
-    .then(data => {
-    const userContainer = document.getElementById('users');
-    for(let i = 0; i < data.length; i++) {
-        const user = data[i];
-        const p = document.createElement('p');
-        p.innerHTML = `<strong>${user.username}</strong>`;
-        userContainer.appendChild(p);
-    }
-})
-
-    </script>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
