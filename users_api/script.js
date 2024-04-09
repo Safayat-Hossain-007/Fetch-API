@@ -1,7 +1,6 @@
 document.getElementById('load-user').addEventListener('click', function () {
     const countText = document.getElementById('user-count').value;
     const count = parseInt(countText);
-    console.log(count);
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(res => res.json())
         .then(data => {
@@ -12,11 +11,10 @@ document.getElementById('load-user').addEventListener('click', function () {
                 const user = data[i];
                 const p = document.createElement('p');
                 p.innerHTML = `
-<p class="users"> Name: <strong>${user.name}</strong>
-    <button onclick="getUserDetails(${user.id})">Get Details -${user.id}</button>
-    </p>
-
-`;
+                        <p class="users"> Name: <strong>${user.name}</strong>
+                        <button onclick="getUserDetails(${user.id})">Get Details -${user.id}</button>
+                        </p>
+                        `;
                 userContainer.appendChild(p);
             }
         })
@@ -31,10 +29,10 @@ function getUserDetails(userId) {
             console.log(data);
             const detail = document.getElementById('user-detail');
             detail.innerHTML = `
-<h1>${data.name}</h1>
-<h4>Email : ${data.email}</h4>
-<p>Phone : ${data.phone}</p>
-`
+                                <h1>${data.name}</h1>
+                                <h4>Email : ${data.email}</h4>
+                                <p>Phone : ${data.phone}</p>
+                                `;
         })
 }
 
